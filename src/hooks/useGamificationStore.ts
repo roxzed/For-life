@@ -1,7 +1,7 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 import type { GamificationState } from '../types/gamification'
-import { XP_VALUES, getLevelForXp } from '../types/gamification'
+import { getLevelForXp } from '../types/gamification'
 
 interface GamificationStore extends GamificationState {
   addXp: (amount: number) => void

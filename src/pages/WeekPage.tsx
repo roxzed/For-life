@@ -4,7 +4,6 @@ import { CheckCircle2, Circle } from 'lucide-react'
 import { Header } from '../components/layout/Header'
 import { useWorkoutStore } from '../hooks/useWorkoutStore'
 import { WORKOUT_PLAN, DAY_ORDER, DAY_LABELS } from '../data/workout-plan'
-import type { DayOfWeek } from '../types/workout'
 
 export function WeekPage() {
   const { getDayLog } = useWorkoutStore()
@@ -38,7 +37,7 @@ export function WeekPage() {
       />
 
       <div className="space-y-3 p-4">
-        {days.map(({ dayOfWeek, dateStr, log, plan, isToday, isPast }) => {
+        {days.map(({ dayOfWeek, log, plan, isToday, isPast }) => {
           const completed = log?.completedCount || 0
           const total = log?.totalCount || plan.mainExercises.length + plan.absExercises.length
           const percentage = total > 0 ? Math.round((completed / total) * 100) : 0

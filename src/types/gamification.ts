@@ -48,7 +48,7 @@ export const ACHIEVEMENTS: Achievement[] = [
 ]
 
 export function getLevelForXp(xp: number) {
-  let current = LEVELS[0]
+  let current: (typeof LEVELS)[number] = LEVELS[0]
   for (const level of LEVELS) {
     if (xp >= level.xpRequired) {
       current = level

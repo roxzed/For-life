@@ -1,4 +1,3 @@
-import { format } from 'date-fns'
 import { Trophy, Flame, Droplets, Dumbbell, Heart, Zap, Shield, Award } from 'lucide-react'
 import { Header } from '../components/layout/Header'
 import { useGamificationStore } from '../hooks/useGamificationStore'
