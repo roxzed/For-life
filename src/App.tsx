@@ -5,6 +5,7 @@ import { WeekPage } from './pages/WeekPage'
 import { CardioPage } from './pages/CardioPage'
 import { SupplementsPage } from './pages/SupplementsPage'
 import { DashboardPage } from './pages/DashboardPage'
+import { SettingsPage } from './pages/SettingsPage'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/cardio" element={<CardioPage />} />
         <Route path="/suplementos" element={<SupplementsPage />} />
         <Route path="/painel" element={<DashboardPage />} />
+        <Route path="/configuracoes" element={<SettingsPage />} />
       </Route>
     </Routes>
   )

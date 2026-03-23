@@ -1,4 +1,5 @@
-import { Flame, Zap } from 'lucide-react'
+import { Flame, Zap, Settings } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 import { useGamificationStore } from '../../hooks/useGamificationStore'
 import { getLevelForXp } from '../../types/gamification'
 
@@ -8,6 +9,7 @@ interface HeaderProps {
 }
 
 export function Header({ title, subtitle }: HeaderProps) {
+  const navigate = useNavigate()
   const { xp, streaks } = useGamificationStore()
   const level = getLevelForXp(xp)
 
@@ -31,6 +33,12 @@ export function Header({ title, subtitle }: HeaderProps) {
             <Zap size={14} className="text-neon-yellow" />
             <span className="text-xs font-bold text-neon-yellow">{level.title}</span>
           </div>
+          <button
+            onClick={() => navigate('/configuracoes')}
+            className="text-gray-500 hover:text-neon-cyan transition-colors"
+          >
+            <Settings size={18} />
+          </button>
         </div>
       </div>
       {/* XP progress bar */}
