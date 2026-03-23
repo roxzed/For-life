@@ -1,0 +1,117 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@theme {
+  --color-neon-cyan: #00f0ff;
+  --color-neon-magenta: #f72585;
+  --color-neon-green: #39ff14;
+  --color-neon-yellow: #ffff00;
+  --color-neon-orange: #ff6600;
+  --color-dark-bg: #0a0a0f;
+  --color-dark-card: #1a1a2e;
+  --color-dark-surface: #16213e;
+  --color-dark-border: #2a2a4a;
+  --font-family-sans: 'Space Grotesk', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-dark-bg);
+  color: #e0e0e0;
+  font-family: var(--font-family-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.glow-cyan {
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.3), 0 0 20px rgba(0, 240, 255, 0.1);
+}
+
+.glow-green {
+  box-shadow: 0 0 10px rgba(57, 255, 20, 0.3), 0 0 20px rgba(57, 255, 20, 0.1);
+}
+
+.glow-magenta {
+  box-shadow: 0 0 10px rgba(247, 37, 133, 0.3), 0 0 20px rgba(247, 37, 133, 0.1);
+}
+
+.glow-orange {
+  box-shadow: 0 0 10px rgba(255, 102, 0, 0.3), 0 0 20px rgba(255, 102, 0, 0.1);
+}
+
+.glass-card {
+  background: rgba(26, 26, 46, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 240, 255, 0.15);
+  border-radius: 12px;
+}
+
+.neon-text-cyan {
+  color: #00f0ff;
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+}
+
+.neon-text-green {
+  color: #39ff14;
+  text-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
+}
+
+.neon-text-magenta {
+  color: #f72585;
+  text-shadow: 0 0 10px rgba(247, 37, 133, 0.5);
+}
+
+@keyframes neon-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.neon-progress-bar {
+  background: linear-gradient(90deg, #00f0ff, #39ff14);
+  animation: neon-pulse 2s ease-in-out infinite;
+  border-radius: 999px;
+}
+
+@keyframes flame-flicker {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(1.1); }
+}
+
+.flame-animation {
+  animation: flame-flicker 0.5s ease-in-out infinite;
+}
+
+@keyframes achievement-unlock {
+  0% { transform: scale(0.5); opacity: 0; }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.achievement-unlock {
+  animation: achievement-unlock 0.5s ease-out;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a2a4a;
+  border-radius: 2px;
+}
